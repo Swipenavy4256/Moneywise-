@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoneyWise – Side Hustles, Savings & Smart Money Moves</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #222;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── HEADER ── */
+    header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+    .logo span { color: #f5a623; }
+    nav a {
+      margin-left: 24px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #ccc;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+
+    /* ── TOP BANNER AD ── */
+    .ad-banner-top {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .ad-banner-top .ad-slot {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+    }
+
+    /* ── AD SLOT STYLES ── */
+    .ad-slot {
+      background: #eef0f5;
+      border: 2px dashed #b0b8cc;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #777;
+      font-size: 0.78rem;
+      padding: 10px;
+      position: relative;
+    }
+    .ad-slot .ad-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: #999;
+      margin-bottom: 4px;
+    }
+    .ad-slot .ad-size {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #aaa;
+    }
+    .ad-slot .ad-note {
+      margin-top: 6px;
+      font-size: 0.7rem;
+      color: #bbb;
+    }
+
+    /* Leaderboard 728×90 */
+    .ad-leaderboard { height: 90px; }
+    /* Rectangle 300×250 */
+    .ad-rectangle { width: 300px; height: 250px; flex-shrink: 0; }
+    /* In-content 468×60 */
+    .ad-incontent { height: 72px; width: 100%; max-width: 468px; margin: 24px auto; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 56px 24px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.4rem; font-weight: 800; line-height: 1.2; max-width: 700px; margin: 0 auto 16px; }
+    .hero p { font-size: 1.05rem; color: #aab; max-width: 540px; margin: 0 auto 28px; }
+    .hero-cta {
+      display: inline-block;
+      background: #f5a623;
+      color: #fff;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .hero-cta:hover { background: #e0941a; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+    }
+
+    /* ── ARTICLES ── */
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #555;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #f5a623;
+      display: inline-block;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .card-thumb {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+    .card-thumb-2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+    .card-thumb-3 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+    .card-thumb-4 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+    .card-thumb-5 { background: linear-gradient(135deg, #fa709a, #fee140); }
+    .card-thumb-6 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+
+    .card-thumb-inner {
+      width: 100%;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+    }
+
+    .card-body { padding: 16px; }
+    .card-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #f5a623;
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+    .card-excerpt { font-size: 0.85rem; color: #666; line-height: 1.5; }
+    .card-meta { font-size: 0.75rem; color: #aaa; margin-top: 10px; }
+
+    /* featured card */
+    .card-featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .card-featured .card-thumb-inner { height: 100%; min-height: 200px; }
+    .card-featured .card-body { padding: 24px; display: flex; flex-direction: column; justify-content: center; }
+    .card-featured .card-title { font-size: 1.3rem; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {}
+    .sidebar-section { margin-bottom: 32px; }
+
+    .popular-list { list-style: none; }
+    .popular-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #333;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .popular-list li:last-child { border-bottom: none; }
+    .popular-num {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #f5a623;
+      min-width: 24px;
+    }
+
+    .newsletter-box {
+      background: #1a1a2e;
+      color: #fff;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+    }
+    .newsletter-box h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .newsletter-box p { font-size: 0.85rem; color: #aab; margin-bottom: 16px; }
+    .newsletter-box input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    .newsletter-box button {
+      width: 100%;
+      padding: 10px;
+      background: #f5a623;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .newsletter-box button:hover { background: #e0941a; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a2e;
+      color: #aab;
+      text-align: center;
+      padding: 32px 24px;
+      margin-top: 40px;
+    }
+    footer .footer-links { margin-bottom: 12px; }
+    footer .footer-links a { color: #aab; margin: 0 12px; font-size: 0.85rem; }
+    footer .footer-links a:hover { color: #fff; }
+    footer p { font-size: 0.8rem; }
+
+    /* ── AD NOTE OVERLAY ── */
+    .adsense-comment {
+      display: block;
+      background: #fff8e1;
+      border-left: 4px solid #f5a623;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      color: #555;
+      border-radius: 0 6px 6px 0;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 900px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .card-featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .card-featured .card-thumb-inner { height: 180px; }
+      .ad-rectangle { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════
+     TOP LEADERBOARD AD SLOT (728×90)
+     Replace the div.ad-slot below with
+     your Google AdSense <ins> tag.
+════════════════════════════════════ -->
+<div class="ad-banner-top">
+  <div class="ad-slot ad-leaderboard">
+    <span class="ad-label">Advertisement</span>
+    <span class="ad-size">Leaderboard 728 × 90</span>
+    <span class="ad-note">← Paste your AdSense code here</span>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Money<span>Wise</span></div>
+    <nav>
+      <a href="#">Side Hustles</a>
+      <a href="#">Investing</a>
+      <a href="#">Savings</a>
+      <a href="#">Tools</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Turn Your Spare Time Into Real Money</h1>
+  <p>Practical guides on side hustles, smart investing, and building wealth — no fluff, just results.</p>
+  <a href="#" class="hero-cta">Browse All Guides →</a>
+</section>
+
+<!-- MAIN CONTENT + SIDEBAR -->
+<div class="main-wrap">
+
+  <!-- ── LEFT: ARTICLES ── -->
+  <main>
+    <div class="section-title">Latest Articles</div>
+
+    <div class="articles-grid">
+
+      <!-- Featured card -->
+      <article class="card card-featured">
+        <div class="card-thumb-inner card-thumb" style="background: linear-gradient(135deg,#1a1a2e,#16213e);">💰</div>
+        <div class="card-body">
+          <div class="card-tag">Featured</div>
+          <div class="card-title">How to Turn $500 Into a Profitable Side Business in 30 Days</div>
+          <p class="card-excerpt">You don't need thousands to start making money. Here's a step-by-step breakdown of the fastest ways to flip $500 into consistent income — from flipping items to launching a local service.</p>
+          <p class="card-meta">June 29, 2026 · 8 min read</p>
+        </div>
+      </article>
+
+      <!-- In-content ad after featured -->
+      <!-- ════════════════════════════════════
+           IN-CONTENT AD SLOT (468×60)
+           Replace the div.ad-slot below with
+           your Google AdSense <ins> tag.
+      ════════════════════════════════════ -->
+      <div style="grid-column: span 2;">
+        <div class="ad-slot ad-incontent">
+          <span class="ad-label">Advertisement</span>
+          <span class="ad-size">In-Content Banner 468 × 60</span>
+          <span class="ad-note">← Paste your AdSense code here</span>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <article class="card">
+        <div class="card-thumb-inner card-thumb card-thumb-2">🛒</div>
+        <div class="card-body">
+          <div class="card-tag">Side Hustles</div>
+          <div class="card-title">Retail Arbitrage: The Beginner's Guide to Flipping on Amazon</div>
+          <p class="card-excerpt">Buy low at clearance sales, sell high on Amazon FBA. Real numbers from real sellers.</p>
+          <p class="card-meta">June 27, 2026 · 6 min read</p>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="card">
+        <div class="card-thumb-inner card-thumb card-thumb-3">📈</div>
+        <div class="card-body">
+          <div class="card-tag">Investing</div>
+          <div class="card-title">Index Funds vs. ETFs: What Should a Beginner Buy First?</div>
+          <p class="card-excerpt">A plain-English breakdown of the two most popular passive investment vehicles.</p>
+          <p class="card-meta">June 25, 2026 · 5 min read</p>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="card">
+        <div class="card-thumb-inner card-thumb card-thumb-4">🧹</div>
+        <div class="card-body">
+          <div class="card-tag">Side Hustles</div>
+          <div class="card-title">Pressure Washing: How One Guy Makes $3,000/Month Part-Time</div>
+          <p class="card-excerpt">A $150 machine and some hustle — here's the full breakdown of a real pressure washing business.</p>
+          <p class="card-meta">June 22, 2026 · 7 min read</p>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="card">
+        <div class="card-thumb-inner card-thumb card-thumb-5">📦</div>
+        <div class="card-body">
+          <div class="card-tag">Side Hustles</div>
+          <div class="card-title">Facebook Marketplace Flipping: 10 Items That Always Sell</div>
+          <p class="card-excerpt">The easiest way to make money locally. These categories flip fast with strong margins.</p>
+          <p class="card-meta">June 19, 2026 · 4 min read</p>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="card">
+        <div class="card-thumb-inner card-thumb card-thumb-6">🏧</div>
+        <div class="card-body">
+          <div class="card-tag">Savings</div>
+          <div class="card-title">The 50/30/20 Rule: How to Actually Stick to a Budget</div>
+          <p class="card-excerpt">The most popular budgeting method explained, with a free template to get started today.</p>
+          <p class="card-meta">June 15, 2026 · 4 min read</p>
+        </div>
+      </article>
+
+    </div><!-- /articles-grid -->
+
+    <!-- ════════════════════════════════════
+         BOTTOM IN-CONTENT AD (728×90)
+         Replace the div.ad-slot below with
+         your Google AdSense <ins> tag.
+    ════════════════════════════════════ -->
+    <div class="ad-slot ad-leaderboard" style="width:100%; margin-top: 8px;">
+      <span class="ad-label">Advertisement</span>
+      <span class="ad-size">Leaderboard 728 × 90</span>
+      <span class="ad-note">← Paste your AdSense code here</span>
+    </div>
+
+  </main>
+
+  <!-- ── RIGHT: SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <!-- Sidebar ad (300×250) -->
+    <!-- ════════════════════════════════════
+         SIDEBAR AD SLOT (300×250) — highest
+         earning ad unit. Replace below with
+         your Google AdSense <ins> tag.
+    ════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <div class="ad-slot ad-rectangle">
+        <span class="ad-label">Advertisement</span>
+        <span class="ad-size">Rectangle 300 × 250</span>
+        <span class="ad-note">← Paste your AdSense code here</span>
+      </div>
+    </div>
+
+    <!-- Most popular -->
+    <div class="sidebar-section">
+      <div class="section-title">Most Popular</div>
+      <ul class="popular-list">
+        <li><span class="popular-num">1</span>How to Make $100 Today With No Money</li>
+        <li><span class="popular-num">2</span>Best Side Hustles for 2026</li>
+        <li><span class="popular-num">3</span>How to Start Investing With $50</li>
+        <li><span class="popular-num">4</span>Vending Machine Business: Is It Worth It?</li>
+        <li><span class="popular-num">5</span>Freelancing 101: Find Your First Client</li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="sidebar-section">
+      <div class="newsletter-box">
+        <h3>Get Weekly Money Tips</h3>
+        <p>No spam. Just the best side hustle and saving ideas, straight to your inbox.</p>
+        <input type="email" placeholder="your@email.com" />
+        <button>Subscribe Free</button>
+      </div>
+    </div>
+
+    <!-- Second sidebar ad (300×250) -->
+    <!-- ════════════════════════════════════
+         2ND SIDEBAR AD SLOT (300×250)
+         Replace below with your AdSense tag.
+    ════════════════════════════════════ -->
+    <div class="sidebar-section">
+      <div class="ad-slot ad-rectangle">
+        <span class="ad-label">Advertisement</span>
+        <span class="ad-size">Rectangle 300 × 250</span>
+        <span class="ad-note">← Paste your AdSense code here</span>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- /main-wrap -->
+
+<!-- FOOTER -->
+<!-- ════════════════════════════════════
+     FOOTER AD SLOT (728×90)
+     Replace below with your AdSense tag.
+════════════════════════════════════ -->
+<div style="background:#fff; padding: 12px 24px; text-align:center;">
+  <div class="ad-slot ad-leaderboard" style="max-width:728px; margin:0 auto;">
+    <span class="ad-label">Advertisement</span>
+    <span class="ad-size">Footer Leaderboard 728 × 90</span>
+    <span class="ad-note">← Paste your AdSense code here</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Contact</a>
+    <a href="#">Advertise</a>
+  </div>
+  <p>© 2026 MoneyWise. All rights reserved. Content is for informational purposes only.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>MoneyWise – Real Ways to Make Money & Save More in 2026</title>
+  <meta name="description" content="MoneyWise covers side hustles, flipping, investing, and saving money. No fake gurus, no bs. Just real stuff that actually works in 2026." />
+  <meta name="keywords" content="how to make money, side hustles 2026, make money with $500, flip items for profit, how to save money, investing for beginners" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yoursite.com/index.html" />
+
+  <!-- Open Graph (Facebook/social sharing) -->
+  <meta property="og:title" content="MoneyWise – Real Ways to Make Money & Save More" />
+  <meta property="og:description" content="Side hustles, flipping, investing, and budgeting tips that actually work. Written by real people, not robots." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yoursite.com/" />
+  <meta property="og:image" content="https://yoursite.com/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MoneyWise – Real Ways to Make Money" />
+  <meta name="twitter:description" content="Side hustles and money tips that actually work in 2026." />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MoneyWise",
+    "url": "https://yoursite.com",
+    "description": "Side hustles, investing tips, and money advice for regular people.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://yoursite.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f9; color: #222; }
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+    header { background: #1a1a2e; color: #fff; padding: 0 24px; }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+    .logo span { color: #f5a623; }
+    nav a { margin-left: 24px; font-size: 0.9rem; font-weight: 500; color: #ccc; transition: color 0.2s; }
+    nav a:hover { color: #fff; }
+
+    /* AD SLOTS */
+    .ad-slot {
+      background: #eef0f5;
+      border: 2px dashed #b0b8cc;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #777;
+      font-size: 0.78rem;
+      padding: 10px;
+    }
+    .ad-slot .ad-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: #999; margin-bottom: 4px; }
+    .ad-slot .ad-size { font-size: 0.85rem; font-weight: 600; color: #aaa; }
+    .ad-slot .ad-note { margin-top: 6px; font-size: 0.7rem; color: #bbb; }
+    .ad-leaderboard { height: 90px; }
+    .ad-rectangle { width: 300px; height: 250px; flex-shrink: 0; }
+    .ad-incontent { height: 72px; width: 100%; max-width: 468px; margin: 24px auto; }
+
+    /* TOP BANNER */
+    .ad-banner-top { background: #fff; border-bottom: 1px solid #e0e0e0; }
+    .ad-banner-top .ad-slot { max-width: 1200px; margin: 0 auto; padding: 12px 24px; border: none; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 56px 24px; text-align: center; }
+    .hero h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.25; max-width: 700px; margin: 0 auto 16px; }
+    .hero p { font-size: 1.05rem; color: #aab; max-width: 540px; margin: 0 auto 28px; line-height: 1.6; }
+    .hero-cta { display: inline-block; background: #f5a623; color: #fff; font-weight: 700; padding: 14px 32px; border-radius: 8px; font-size: 1rem; transition: background 0.2s; }
+    .hero-cta:hover { background: #e0941a; }
+
+    /* LAYOUT */
+    .main-wrap { max-width: 1200px; margin: 40px auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 320px; gap: 40px; }
+
+    /* ARTICLES */
+    .section-title { font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #555; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 3px solid #f5a623; display: inline-block; }
+    .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 32px; }
+
+    .card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .card-thumb-inner { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2.8rem; }
+    .card-body { padding: 16px; }
+    .card-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #f5a623; margin-bottom: 6px; }
+    .card-title { font-size: 1rem; font-weight: 700; line-height: 1.4; color: #1a1a2e; margin-bottom: 8px; }
+    .card-excerpt { font-size: 0.85rem; color: #666; line-height: 1.6; }
+    .card-meta { font-size: 0.75rem; color: #aaa; margin-top: 10px; }
+    .card-read { display: inline-block; margin-top: 12px; font-size: 0.82rem; font-weight: 700; color: #f5a623; }
+    .card-read:hover { text-decoration: underline; }
+
+    .card-featured { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; }
+    .card-featured .card-thumb-inner { height: 100%; min-height: 220px; }
+    .card-featured .card-body { padding: 28px; display: flex; flex-direction: column; justify-content: center; }
+    .card-featured .card-title { font-size: 1.4rem; margin-bottom: 12px; }
+    .card-featured .card-excerpt { font-size: 0.9rem; }
+
+    /* THUMB COLORS */
+    .t1 { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+    .t2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+    .t3 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+    .t4 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+    .t5 { background: linear-gradient(135deg, #fa709a, #fee140); }
+    .t6 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+    .t7 { background: linear-gradient(135deg, #f7971e, #ffd200); }
+
+    /* SIDEBAR */
+    .popular-list { list-style: none; }
+    .popular-list li { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; font-weight: 600; color: #333; display: flex; gap: 10px; align-items: flex-start; }
+    .popular-list li:last-child { border-bottom: none; }
+    .popular-list a:hover { color: #f5a623; }
+    .popular-num { font-size: 1.2rem; font-weight: 800; color: #f5a623; min-width: 24px; }
+    .sidebar-section { margin-bottom: 32px; }
+
+    .newsletter-box { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 24px; text-align: center; }
+    .newsletter-box h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .newsletter-box p { font-size: 0.85rem; color: #aab; margin-bottom: 16px; }
+    .newsletter-box input { width: 100%; padding: 10px 14px; border-radius: 6px; border: none; margin-bottom: 10px; font-size: 0.9rem; }
+    .newsletter-box button { width: 100%; padding: 10px; background: #f5a623; color: #fff; font-weight: 700; border: none; border-radius: 6px; font-size: 0.9rem; cursor: pointer; }
+    .newsletter-box button:hover { background: #e0941a; }
+
+    /* CATEGORIES STRIP */
+    .categories { background: #fff; border-bottom: 1px solid #e8e8e8; padding: 0 24px; }
+    .categories-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 4px; overflow-x: auto; }
+    .cat-link { padding: 14px 18px; font-size: 0.85rem; font-weight: 600; color: #555; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .cat-link:hover, .cat-link.active { color: #f5a623; border-bottom-color: #f5a623; }
+
+    /* FOOTER */
+    footer { background: #1a1a2e; color: #aab; text-align: center; padding: 32px 24px; margin-top: 40px; }
+    footer .footer-links { margin-bottom: 12px; }
+    footer .footer-links a { color: #aab; margin: 0 12px; font-size: 0.85rem; }
+    footer .footer-links a:hover { color: #fff; }
+    footer p { font-size: 0.8rem; }
+
+    @media (max-width: 900px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .card-featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .card-featured .card-thumb-inner { height: 180px; }
+      .ad-rectangle { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BANNER AD (728x90) — replace with AdSense <ins> tag -->
+<div class="ad-banner-top">
+  <div class="ad-slot ad-leaderboard" style="max-width:1200px; margin:0 auto; padding:12px 24px;">
+    <span class="ad-label">Advertisement</span>
+    <span class="ad-size">Leaderboard 728 × 90</span>
+    <span class="ad-note">Paste AdSense code here</span>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Money<span>Wise</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Side Hustles</a>
+      <a href="#">Investing</a>
+      <a href="#">Savings</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="categories">
+  <div class="categories-inner">
+    <a href="#" class="cat-link active">All</a>
+    <a href="#" class="cat-link">Side Hustles</a>
+    <a href="#" class="cat-link">Flipping</a>
+    <a href="#" class="cat-link">Investing</a>
+    <a href="#" class="cat-link">Savings</a>
+    <a href="#" class="cat-link">Budgeting</a>
+    <a href="#" class="cat-link">Freelancing</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Real Ways to Make Money — That Actually Work</h1>
+  <p>No fake gurus. No "get rich overnight" stuff. Just real, honest breakdowns of how regular people are making extra money in 2026.</p>
+  <a href="#articles" class="hero-cta">Show Me the Money →</a>
+</section>
+
+<!-- MAIN -->
+<div class="main-wrap" id="articles">
+  <main>
+    <div class="section-title">Latest Posts</div>
+    <div class="articles-grid">
+
+      <!-- Featured -->
+      <article class="card card-featured" itemscope itemtype="https://schema.org/Article">
+        <div class="card-thumb-inner t1">💰</div>
+        <div class="card-body">
+          <div class="card-tag">Featured · Side Hustles</div>
+          <h2 class="card-title" itemprop="headline">
+            <a href="flip-500.html">I Had $500 and Needed to Make More. Here's What I Did.</a>
+          </h2>
+          <p class="card-excerpt" itemprop="description">Most articles about making money say stuff like "invest in index funds" or "start a blog." Cool, but what if you need money now? I'm going to show you the fastest, most realistic ways to flip $500 into more — starting this week.</p>
+          <a href="flip-500.html" class="card-read">Read More →</a>
+          <p class="card-meta">June 29, 2026 · 8 min read</p>
+        </div>
+      </article>
+
+      <!-- In-content ad -->
+      <div style="grid-column: span 2;">
+        <!-- IN-CONTENT AD (468x60) — replace with AdSense <ins> tag -->
+        <div class="ad-slot ad-incontent">
+          <span class="ad-label">Advertisement</span>
+          <span class="ad-size">In-Content 468 × 60</span>
+          <span class="ad-note">Paste AdSense code here</span>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <article class="card" itemscope itemtype="https://schema.org/Article">
+        <div class="card-thumb-inner t2">🧹</div>
+        <div class="card-body">
+          <div class="card-tag">Side Hustles</div>
+          <h2 class="card-title" itemprop="headline">
+            <a href="pressure-washing.html">Pressure Washing: The Laziest Business That Makes Real Money</a>
+          </h2>
+          <p class="card-excerpt" itemprop="description">You buy a machine, you spray stuff, people pay you. One guy I read about makes $3k a month doing this on weekends only.</p>
+          <a href="pressure-washing.html" class="card-read">Read More →</a>
+          <p class="card-meta">June 27, 2026 · 6 min read</p>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="card" itemscope itemtype="https://schema.org/Article">
+        <div class="card-thumb-inner t3">📦</div>
+        <div class="card-body">
+          <div class="card-tag">Flipping</div>
+          <h2 class="card-title" itemprop="headline">
+            <a href="facebook-marketplace.html">10 Things to Buy and Flip on Facebook Marketplace Right Now</a>
+          </h2>
+          <p class="card-excerpt" itemprop="description">Facebook Marketplace is basically a goldmine if you know what to look for. Here's my list of stuff that sells fast and makes decent money.</p>
+          <a href="facebook-marketplace.html" class="card-read">Read More →</a>
+          <p class="card-meta">June 25, 2026 · 5 min read</p>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="card" itemscope itemtype="https://schema.org/Article">
+        <div class="card-thumb-inner t4">📈</div>
+        <div class="card-body">
+          <div class="card-tag">Investing</div>
+          <h2 class="card-title" itemprop="headline">
+            <a href="#">Index Funds vs ETFs: Which One Should a Beginner Buy?</a>
+          </h2>
+          <p class="card-excerpt" itemprop="description">I was confused about this for way too long. Here's the actual simple answer with no finance-bro jargon.</p>
+          <a href="#" class="card-read">Read More →</a>
+          <p class="card-meta">June 22, 2026 · 5 min read</p>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="card" itemscope itemtype="https://schema.org/Article">
+        <div class="card-thumb-inner t5">🛒</div>
+        <div class="card-body">
+          <div class="card-tag">Flipping</div>
+          <h2 class="card-title" itemprop="headline">
+            <a href="#">Retail Arbitrage on Amazon: Is It Still Worth It in 2026?</a>
+          </h2>
+          <p class="card-excerpt" itemprop="description">Buying stuff at Walmart and reselling on Amazon — it sounds dumb but people make thousands doing it every month.</p>
+          <a href="#" class="card-read">Read More →</a>
+          <p class="card-meta">June 20, 2026 · 6 min read</p>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="card" itemscope itemtype="https://schema.org/Article">
+        <div class="card-thumb-inner t6">🏧</div>
+        <div class="card-body">
+          <div class="card-tag">Budgeting</div>
+          <h2 class="card-title" itemprop="headline">
+            <a href="#">The 50/30/20 Budget Rule — And Why Most People Get It Wrong</a>
+          </h2>
+          <p class="card-excerpt" itemprop="description">It's the most popular budget method out there. But a lot of people mess it up in one specific way. Let me show you.</p>
+          <a href="#" class="card-read">Read More →</a>
+          <p class="card-meta">June 18, 2026 · 4 min read</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- BOTTOM AD (728x90) — replace with AdSense <ins> tag -->
+    <div class="ad-slot ad-leaderboard" style="width:100%; margin-top:8px;">
+      <span class="ad-label">Advertisement</span>
+      <span class="ad-size">Leaderboard 728 × 90</span>
+      <span class="ad-note">Paste AdSense code here</span>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <!-- SIDEBAR AD (300x250) — replace with AdSense <ins> tag — highest earner -->
+    <div class="sidebar-section">
+      <div class="ad-slot ad-rectangle">
+        <span class="ad-label">Advertisement</span>
+        <span class="ad-size">Rectangle 300 × 250</span>
+        <span class="ad-note">Paste AdSense code here</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="section-title">Most Read</div>
+      <ul class="popular-list">
+        <li><span class="popular-num">1</span><a href="flip-500.html">How to Flip $500 Into More Money</a></li>
+        <li><span class="popular-num">2</span><a href="pressure-washing.html">Pressure Washing Business Guide</a></li>
+        <li><span class="popular-num">3</span><a href="facebook-marketplace.html">Best Things to Flip on Facebook Marketplace</a></li>
+        <li><span class="popular-num">4</span><a href="#">Retail Arbitrage on Amazon 2026</a></li>
+        <li><span class="popular-num">5</span><a href="#">How to Start Investing With $50</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="newsletter-box">
+        <h3>Get Weekly Money Tips</h3>
+        <p>No spam. Just the best stuff, once a week.</p>
+        <input type="email" placeholder="your@email.com" />
+        <button>Subscribe Free</button>
+      </div>
+    </div>
+
+    <!-- 2ND SIDEBAR AD (300x250) — replace with AdSense <ins> tag -->
+    <div class="sidebar-section">
+      <div class="ad-slot ad-rectangle">
+        <span class="ad-label">Advertisement</span>
+        <span class="ad-size">Rectangle 300 × 250</span>
+        <span class="ad-note">Paste AdSense code here</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- FOOTER AD (728x90) — replace with AdSense <ins> tag -->
+<div style="background:#fff; padding:12px 24px; text-align:center; border-top:1px solid #e0e0e0;">
+  <div class="ad-slot ad-leaderboard" style="max-width:728px; margin:0 auto;">
+    <span class="ad-label">Advertisement</span>
+    <span class="ad-size">Footer Leaderboard 728 × 90</span>
+    <span class="ad-note">Paste AdSense code here</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="#">Contact</a>
+  </div>
+  <p>© 2026 MoneyWise. Content is for informational purposes only and does not constitute financial advice.</p>
+</footer>
+
+</body>
+</html>
